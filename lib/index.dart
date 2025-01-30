@@ -8,3 +8,5 @@ export '/pages/createaccount/createaccount_widget.dart'
 
 export '/pages/createaccount4/createaccount4_widget.dart'
     show Createaccount4Widget;
+export '/pages/createaccount5/createaccount5_widget.dart'
+    show Createaccount5Widget;
