@@ -104,6 +104,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/createaccount',
           builder: (context, params) => CreateaccountWidget(),
         ),
+        FFRoute(
+          name: 'createaccount3',
+          path: '/createaccount3',
+          builder: (context, params) => Createaccount3Widget(),
+        ),
+        FFRoute(
+          name: 'createaccount4',
+          path: '/createaccount4',
+          builder: (context, params) => Createaccount4Widget(),
+        ),
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
 
