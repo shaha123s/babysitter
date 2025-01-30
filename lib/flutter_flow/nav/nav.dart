@@ -77,6 +77,36 @@ class AppStateNotifier extends ChangeNotifier {
   }
 }
 
+GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
+      initialLocation: '/',
+      debugLogDiagnostics: true,
+      refreshListenable: appStateNotifier,
+      navigatorKey: appNavigatorKey,
+      errorBuilder: (context, state) => SigninWidget(),
+      routes: [
+        FFRoute(
+          name: 'createaccount2',
+          path: '/createaccount2',
+          builder: (context, params) => Createaccount2Widget(
+            pass: params.getParam(
+              'pass',
+              ParamType.String,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'signin',
+          path: '/signin',
+          builder: (context, params) => SigninWidget(),
+        ),
+        FFRoute(
+          name: 'createaccount',
+          path: '/createaccount',
+          builder: (context, params) => CreateaccountWidget(),
+        ),
+      ].map((r) => r.toRoute(appStateNotifier)).toList(),
+    );
+
 extension NavParamExtensions on Map<String, String?> {
   Map<String, String> get withoutNulls => Map.fromEntries(
         entries
