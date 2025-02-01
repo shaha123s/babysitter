@@ -119,6 +119,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/createaccount5',
           builder: (context, params) => Createaccount5Widget(),
         ),
+        FFRoute(
+          name: 'profile',
+          path: '/profile',
+          builder: (context, params) => ProfileWidget(),
+        ),
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
 
