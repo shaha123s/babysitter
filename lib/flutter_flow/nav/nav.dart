@@ -124,6 +124,25 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/profile',
           builder: (context, params) => ProfileWidget(),
         ),
+        FFRoute(
+          name: 'to_do',
+          path: '/toDo',
+          builder: (context, params) => ToDoWidget(
+            childidd: params.getParam(
+              'childidd',
+              ParamType.int,
+            ),
+            orderId: params.getParam(
+              'orderId',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'comment',
+          path: '/comment',
+          builder: (context, params) => CommentWidget(),
+        ),
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
 
