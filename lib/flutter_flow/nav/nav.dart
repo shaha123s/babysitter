@@ -162,6 +162,38 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
           ),
         ),
+        FFRoute(
+          name: 'booking',
+          path: '/booking',
+          builder: (context, params) => BookingWidget(),
+        ),
+        FFRoute(
+          name: 'bookingdetalis',
+          path: '/bookingdetalis',
+          builder: (context, params) => BookingdetalisWidget(
+            motherId: params.getParam(
+              'motherId',
+              ParamType.String,
+            ),
+            duration: params.getParam(
+              'duration',
+              ParamType.int,
+            ),
+            note: params.getParam(
+              'note',
+              ParamType.String,
+            ),
+            bookingId: params.getParam(
+              'bookingId',
+              ParamType.int,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'current',
+          path: '/current',
+          builder: (context, params) => CurrentWidget(),
+        )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
 
