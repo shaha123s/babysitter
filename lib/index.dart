@@ -15,3 +15,5 @@ export '/pages/profile/profile_widget.dart' show ProfileWidget;
 export '/pages/comment/comment_widget.dart' show CommentWidget;
 
 export '/pages/to_do/to_do_widget.dart' show ToDoWidget;
+export '/pages/to_do/to_do_widget.dart' show ToDoWidget;
+export '/pages/wait/wait_widget.dart' show WaitWidget;
